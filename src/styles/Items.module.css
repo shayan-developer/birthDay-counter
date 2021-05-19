@@ -1,0 +1,15 @@
+.contain{
+display: flex;
+align-items: center;
+}
+.info{
+font-family: 'sahel' ,sans-serif;
+color: var(--purple);
+font-weight: 500;
+}
+.name{
+    font-size: .8rem;
+}
+.counter{
+    font-size: .7rem;
+}

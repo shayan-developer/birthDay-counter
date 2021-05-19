@@ -1,0 +1,16 @@
+
+
+/* main color  */
+:root{
+    --black:#21094e;
+    --purple:#511281;
+    --white:#fdfdfd;
+}
+@font-face {
+    font-family:"sahel" ;
+    src: url("../fonts/Sahel.woff") format(woff);
+}
+body{
+    background-color: var(--black);
+    direction: rtl;
+}
