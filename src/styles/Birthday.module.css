@@ -1,11 +1,10 @@
 .container{
     background-color: var(--white);
     border-radius: .5rem;
-}
-.text{
-    color: var(--purple);
-    direction: rtl;
-    text-align: center;
-    font-family: "sahel",sans-serif;
-    font-weight: 600;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top:10vh ;
+    overflow: hidden;
 }

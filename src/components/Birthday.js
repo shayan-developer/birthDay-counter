@@ -8,7 +8,7 @@ export default function Birthday() {
             <Row justify="center">
                 <Col xs={18} md={20}>
                     <div className={styles.container}>
-                        <p className={styles.text}>5 تولد در پیش رو</p>
+                        
                         <List />
                     </div>
                 </Col>

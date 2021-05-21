@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Modal, Button } from 'antd';
 import styles from "../../styles/Add.module.css"
+import InputAdd from './InputAdd';
 export default function Add() {
     const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -19,12 +20,10 @@ export default function Add() {
     return (
         <>
             <Button className={styles.btn} onClick={showModal}>
-                اضافه کردن
+                تولد
       </Button>
             <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
+                <InputAdd/>
             </Modal>
         </>
     )

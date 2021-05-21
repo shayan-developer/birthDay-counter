@@ -1,14 +1,26 @@
-import { Avatar } from 'antd'
-import React from 'react'
+import { Avatar, Spin } from 'antd'
+import React, { useEffect } from 'react'
 import styles from "../../../styles/Items.module.css"
+import {useSelector,useDispatch}from "react-redux"
+import { getBirth } from '../../../redux/actions/action';
 export default function Items() {
+    const {person,loading} = useSelector(state=>state);
+    const dispath=useDispatch()
+    useEffect(() => {
+        dispath(getBirth())
+    }, [])
     return (
-        <div className={styles.contain}>
-            <Avatar size={50} src={'https://www.next.co.uk/nxtcms/resource/image/4027550/portrait_ratio4x5/320/400/d4246ca2ae19d00c51b1b61083bce176/RJ/label-mix.jpg'} />
-            <div className={styles.info}>
-                <p className={styles.name}> سینا محمدی</p>
-                <p className={styles.counter}> 50روز مانده</p>
-            </div>
-        </div>
+        <>
+        {loading ?<span className={styles.spin}><Spin size='large' /></span> : person.map((per,index)=>{
+                return<div className={styles.contain} key={index}>
+                <Avatar size={55} src={per.photo} />
+                <div className={styles.info}>
+                    <p className={styles.name}> {per.name}</p>
+                    <p className={styles.counter}> {per.month}روز مانده</p>
+                </div>
+                </div>
+                
+            })}
+        </>
     )
 }

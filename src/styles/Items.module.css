@@ -1,15 +1,32 @@
 .contain{
 display: flex;
 align-items: center;
+padding: .25rem;
+background-color: var(--gray);
+margin-bottom: .5rem;
 }
 .info{
 font-family: 'sahel' ,sans-serif;
 color: var(--purple);
+min-height:50px !important;
+margin-right:.5rem;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
 font-weight: 500;
 }
 .name{
     font-size: .8rem;
+    margin: 0;
 }
 .counter{
     font-size: .7rem;
+    margin: 0;
+}
+.spin{
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
