@@ -1,14 +1,8 @@
-import { GET_BIRTH, GET_DATA } from "../types/types"
+import { GET_BIRTH } from "../types/types"
 
-export const getData =()=>{
-
-    return{
-        type:GET_DATA
-    }
-}
-
-export const getBirth =()=>{
-    return{
-        type:GET_BIRTH
+export const getBirth = () => {
+    return {
+        type: GET_BIRTH,
+        
     }
 }

@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import 'antd/dist/antd.css'
 import "./styles/global.css"
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ReactDOM.render(<App />,
   document.getElementById('root')
 );

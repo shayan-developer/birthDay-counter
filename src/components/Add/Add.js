@@ -20,9 +20,9 @@ export default function Add() {
     return (
         <>
             <Button className={styles.btn} onClick={showModal}>
-                تولد
+                اضافه کردن
       </Button>
-            <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+            <Modal title="اضافه کردن تولد" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                 <InputAdd/>
             </Modal>
         </>
