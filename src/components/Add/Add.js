@@ -1,20 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Modal, Button } from 'antd';
 import styles from "../../styles/Add.module.css"
 import InputAdd from './InputAdd';
+import { useDispatch, useSelector } from 'react-redux';
+import { checkmodal } from '../../redux/actions/action';
 export default function Add() {
-    const [isModalVisible, setIsModalVisible] = useState(false);
-
+const {modal}=useSelector(state=>state) 
+const dispatch=useDispatch()
     const showModal = () => {
-        setIsModalVisible(true);
+    dispatch(checkmodal(true))
     };
 
     const handleOk = () => {
-        setIsModalVisible(false);
+        dispatch(checkmodal(false))
+
     };
 
     const handleCancel = () => {
-        setIsModalVisible(false);
+        dispatch(checkmodal(false))
+
     };
 
     return (
@@ -22,7 +26,7 @@ export default function Add() {
             <Button className={styles.btn} onClick={showModal}>
                 اضافه کردن
       </Button>
-            <Modal title="اضافه کردن تولد" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+            <Modal title={<p style={{fontFamily:"sahel"}}>اضافه کردن تولد </p>} visible={modal} onOk={handleOk} onCancel={handleCancel}>
                 <InputAdd/>
             </Modal>
         </>

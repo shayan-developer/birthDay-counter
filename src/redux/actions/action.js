@@ -1,8 +1,15 @@
-import { GET_BIRTH } from "../types/types"
+import { LOADING, MODAl } from "../types/types"
 
-export const getBirth = () => {
+export const isloading = () => {
     return {
-        type: GET_BIRTH,
+        type: LOADING,
+        
+    }
+}
+export const checkmodal = (boolean) => {
+    return {
+        type: MODAl,
+        check:boolean
         
     }
 }

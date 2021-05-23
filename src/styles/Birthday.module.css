@@ -1,10 +1,18 @@
 .container{
     background-color: var(--white);
     border-radius: .5rem;
-    min-height: 80vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-top:10vh ;
     overflow: hidden;
+    box-shadow: 0 0 15px var(--purple) ,0 0 15px var(--white);
 }
+
+@media (min-width:576px) {
+ .container{
+    box-shadow: 0 0 20px var(--purple) ,0 0 20px var(--white);
+ }
+}
+

@@ -1,15 +1,20 @@
-import { GET_DATA, GET_BIRTH } from "../types/types";
+import { GET_DATA, LOADING, MODAl } from "../types/types";
 
 const initialState = {
-    loading: true
+    loading: true,
+    modal:false
 }
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case GET_BIRTH:
+        case LOADING:
             return {
-                ...state,
-                loading: false,
+                loading:false,
             }
+         case MODAl:
+             return{
+                 ...state,
+                 modal:action.check
+             }   
         default:
             return state
         }

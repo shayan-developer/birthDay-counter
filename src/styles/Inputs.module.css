@@ -1,0 +1,19 @@
+.form{
+    /* direction: rtl; */
+    font-family: 'sahel',serif;
+}
+
+.login{
+    width: 100%;
+    background-color: var(--purple) !important;
+    color: var(--white) !important;
+    border-radius: .5rem !important;
+    transition: all 1s ease-in !important;
+}
+.login:hover{
+    border: none !important;
+    background-color:var(--black) !important;
+}
+.lable{
+    color: red !important;
+}

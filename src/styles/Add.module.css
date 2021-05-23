@@ -1,8 +1,27 @@
 .btn{
     background-color: var(--purple) !important;
     color: var(--white) !important;
-    font-family: 'sahel',serif;
+    font-family: 'sahel',serif !important;
     width: 100%;
     border-radius: .5rem;
+    height: auto !important;
     border: none !important;
+    padding: .6rem 0 !important;
+    font-weight: 400 !important;
+    transition: all 1s ease-in !important;
+}
+.btn:hover{
+    border: none !important;
+    background-color:var(--black) !important;
+}
+@media (min-width:576px) {
+   .btn{
+font-size: 1.1rem !important;
+   }
+}
+
+@media (min-width:780px) {
+    .btn{
+        font-size: 1.3rem !important;
+    }
 }
