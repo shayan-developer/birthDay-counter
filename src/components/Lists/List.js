@@ -16,7 +16,6 @@ export default function List() {
                 {!Frame().length ? <span className={styles.spin}><Spin size='large' /></span> :
                     Frame().map((el, i) => <Items {...el} index={i} key={i} />)}
             </div>
-
             <Add />
         </>
     )

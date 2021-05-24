@@ -10,23 +10,23 @@ const dispatch=useDispatch()
     const showModal = () => {
     dispatch(checkmodal(true))
     };
-
-    const handleOk = () => {
-        dispatch(checkmodal(false))
-
-    };
-
     const handleCancel = () => {
         dispatch(checkmodal(false))
-
     };
-
     return (
         <>
             <Button className={styles.btn} onClick={showModal}>
                 اضافه کردن
       </Button>
-            <Modal title={<p style={{fontFamily:"sahel"}}>اضافه کردن تولد </p>} visible={modal} onOk={handleOk} onCancel={handleCancel}>
+            <Modal 
+            title={<p style={{fontFamily:"sahel"}}>اضافه کردن تولد </p>}
+             visible={modal}  onCancel={handleCancel}
+             footer={[
+                <Button key="back" className={styles.btn} onClick={handleCancel}>
+                  خروج
+                </Button>
+              ]}
+             >
                 <InputAdd/>
             </Modal>
         </>

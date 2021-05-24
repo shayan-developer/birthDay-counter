@@ -1,5 +1,5 @@
-import { Upload, message, Button, Input, InputNumber, Form } from 'antd';
-import { UploadOutlined, UserOutlined } from '@ant-design/icons';
+import { Upload, message, Button, Input, Form, InputNumber } from 'antd';
+import { UploadOutlined} from '@ant-design/icons';
 import React from 'react'
 import styles from "../../styles/Inputs.module.css"
 import { useEasybase } from 'easybase-react';
@@ -31,36 +31,43 @@ export default function InputAdd() {
     };
     return (
         <>
-
             <Form
                 name="normal_login"
                 className={styles.form}
                 initialValues={{ remember: true }}
-                onFinish={onFinish}
+                onFinish={onFinish} 
+                layout="vertical" 
             >
                 <Form.Item
                     className={styles.input}
                     name="name"
+                    label="نام"
                     rules={[{ required: true, message: 'لطفا نام را وارد کنید' }]}
                 >
                     <Input
                         placeholder="لطفا نام را وارد کنید" />
                 </Form.Item>
                 <Form.Item
-                    className={styles.input}
                     name="month"
-                    rules={[{ required: true, message: "لطفا ماه تولد را وارد کنید " }]}
+                   label="ماه تولد"
+                    rules={[{ type: 'number', min: 1,
+                     max: 12 ,required: true,
+                     message: 'لطفا ماه را وارد کنید' 
+
+                    }]}
                 >
-                    <Input
-                        placeholder="لطفا ماه تولد را وارد کنید " />
+                    <InputNumber />
                 </Form.Item>
                 <Form.Item
-                    className={styles.input}
                     name="day"
-                    rules={[{ required: true, message: "لطفا روز تولد را وارد کنید" }]}
+                   label=" روز تولد"
+                    rules={[{ type: 'number', min: 1,
+                     max: 31 ,required: true,
+                     message: 'لطفا روز را وارد کنید' 
+
+                    }]}
                 >
-                    <Input
-                        placeholder="لطفا روز تولد را وارد کنید" />
+                    <InputNumber />
                 </Form.Item>
                 <Form.Item
                     name="upload"

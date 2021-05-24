@@ -4,11 +4,16 @@
     padding: .25rem;
     background-color: var(--gray);
     margin-bottom: .5rem;
+    transition: all .3s;
+}
+.contain:hover{
+   padding-right: .5rem;
 }
 
 .info {
     font-family: 'sahel', sans-serif;
     color: var(--purple);
+    height: 100%;
     min-height: 50px !important;
     margin-right: .5rem;
     display: flex;
@@ -25,7 +30,7 @@
 
 .name {
     font-size: .8rem;
-    margin: 0;
+    margin-bottom: .5rem;
     font-weight: 700;
 }
 

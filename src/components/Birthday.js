@@ -16,9 +16,8 @@ export default function Birthday() {
    
     return (
         <main>
-            {}
             <Row justify="center">
-                <Col xs={18} md={20}>
+                <Col xs={18} md={14}>
                     <div className={styles.container}>
                         
                         <List />
