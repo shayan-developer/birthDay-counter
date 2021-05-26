@@ -1,4 +1,4 @@
-import { GET_DATA, LOADING, MODAl } from "../types/types";
+import {LOADING, MODAl } from "../types/types";
 
 const initialState = {
     loading: true,

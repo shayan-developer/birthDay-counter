@@ -5,14 +5,13 @@ import styles from "../styles/Birthday.module.css"
 import List from './Lists/List'
 export default function Birthday() {
     const { configureFrame,
-        Frame,
         sync,
     } = useEasybase()
 
     useEffect( () => {
         configureFrame({tableName: "BIRTHDAY" ,limit:10});
         sync()
-    },[])
+    })
    
     return (
         <main>
