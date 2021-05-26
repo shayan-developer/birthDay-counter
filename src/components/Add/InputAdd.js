@@ -1,5 +1,4 @@
-import { Upload, message, Button, Input, Form, InputNumber } from 'antd';
-import { UploadOutlined} from '@ant-design/icons';
+import { message, Button, Input, Form, InputNumber } from 'antd';
 import React from 'react'
 import styles from "../../styles/Inputs.module.css"
 import { useEasybase } from 'easybase-react';
@@ -11,15 +10,6 @@ export default function InputAdd() {
         Frame,
         sync
     } = useEasybase()
-    const normFile = (e) => {
-        console.log('Upload event:', e);
-
-        if (Array.isArray(e)) {
-            return e;
-        }
-
-        return e && e.fileList;
-    };
     const onFinish = (values) => {
         const { name, month, day, upload } = values;
         Frame().unshift({ name: name, month: month, day: day, photo: upload })
@@ -68,15 +58,6 @@ export default function InputAdd() {
                     }]}
                 >
                     <InputNumber />
-                </Form.Item>
-                <Form.Item
-                    name="upload"
-                    valuePropName="fileList"
-                    getValueFromEvent={normFile}
-                >
-                    <Upload name="logo" action="https://app.easybase.io/" listType="picture">
-                        <Button icon={<UploadOutlined />}> برای انتخاب عکس کلیک کنید </Button>
-                    </Upload>
                 </Form.Item>
                 <Form.Item>
                     <Button htmlType="submit" className={styles.login}>
