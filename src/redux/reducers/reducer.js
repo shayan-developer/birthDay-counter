@@ -1,9 +1,10 @@
-import { COUNT, LOADING, MODAl } from "../types/types";
+import { COUNT, DATA, LOADING, MODAl } from "../types/types";
 
 const initialState = {
     loading: true,
     modal: false,
-    count: 0
+    count: 0,
+    data:[]
 }
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -20,6 +21,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 count: action.check
+            }
+        case DATA:
+            return {
+                ...state,
+                data: action.data
             }
         default:
             return state

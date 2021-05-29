@@ -1,18 +1,8 @@
 import { Row, Col } from 'antd'
-import { useEasybase } from 'easybase-react'
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from "../styles/Birthday.module.css"
 import List from './Lists/List'
 export default function Birthday() {
-    const { configureFrame,
-        sync,
-    } = useEasybase()
-
-    useEffect( () => {
-        configureFrame({tableName: "BIRTHDAY" ,limit:100});
-        sync()
-    })
-   
     return (
         <main>
             <Row justify="center">

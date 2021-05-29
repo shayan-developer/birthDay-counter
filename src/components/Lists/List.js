@@ -1,32 +1,33 @@
-import React, { useEffect} from 'react'
+import React, { useEffect,useCallback} from 'react'
 import Add from '../Add/Add'
 import Items from './Items/Items'
 import styles from "../../styles/List.module.css"
 import { useEasybase } from 'easybase-react'
 import { Spin } from 'antd'
 import {useDispatch,useSelector} from "react-redux"
-import { checkCount } from '../../redux/actions/action'
+import { checkCount,getpeople } from '../../redux/actions/action'
 export default function List() {
-    const {count}=useSelector(state=>state);
+    const {count,data}=useSelector(state=>state);
     const dispatch=useDispatch()
     const {
-        Frame,
         db
     } = useEasybase()
+    const getdata=useCallback(async()=>{
+        const all= await db().return().all();
+            const num=all.length;
+            dispatch(checkCount(num));
+            dispatch(getpeople(all));
+    },[db,dispatch])
     useEffect(()=>{
-        async function getdata(){
-            const all= await db().return().all();
-            const num=all.length
-            dispatch(checkCount(num))}
             getdata()
-    },[db])
-    
+    },[getdata])
+    console.log(data);
     return (
         < >
             <p className={styles.text}>{count} تولد در پیش رو</p>
             <div className={styles.contain}>
                 {!count? <span className={styles.spin}><Spin size='large' /></span> :
-                    Frame().map((el, i) => <Items {...el} index={i} key={i} />)}
+                    data.map((el, i) => <Items {...el} index={i} key={i} />)}
             </div>
             <Add />
         </>
