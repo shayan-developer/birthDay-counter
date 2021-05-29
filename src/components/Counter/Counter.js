@@ -14,7 +14,7 @@ export default function Counter({ day, month }) {
         }
         else {
             const userTime =parseInt(moment(`${currentYear}/${month}/${day}`, 'YYYY/M/D').format("DDD"));
-            const sum=userTime-currentTime
+            const sum=Math.abs( userTime-currentTime)
             return sum
         }
     }

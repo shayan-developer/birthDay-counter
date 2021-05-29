@@ -2,21 +2,22 @@ import { message, Button, Input, Form, InputNumber } from 'antd';
 import React from 'react'
 import styles from "../../styles/Inputs.module.css"
 import { useEasybase } from 'easybase-react';
-import { checkmodal } from '../../redux/actions/action';
+import { checkCount, checkmodal, getpeople } from '../../redux/actions/action';
 import { useDispatch } from 'react-redux';
 export default function InputAdd() {
     const dispatch=useDispatch()
     const {
-        Frame,
-        sync
+        db
     } = useEasybase()
-    const onFinish = (values) => {
+    const onFinish =async (values) => {
         const { name, month, day, upload } = values;
-        Frame().unshift({ name: name, month: month, day: day, photo: upload })
-        sync()
+        db().insert({ name: name, month: month, day: day, photo: upload }).one()
         console.log('Received values of form: ', values);
-        message.success('با موفقیت اضافه شد ');
-        dispatch(checkmodal(false))
+        message.success({content:'با موفقیت به آخر صف اضافه شد ',duration:4});
+        dispatch(checkmodal(false));
+        const newdata =await db().return().all();
+        dispatch(getpeople(newdata));
+        dispatch(checkCount(newdata.length))
 
     };
     return (

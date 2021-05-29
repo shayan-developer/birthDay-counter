@@ -21,7 +21,6 @@ export default function List() {
     useEffect(()=>{
             getdata()
     },[getdata])
-    console.log(data);
     return (
         < >
             <p className={styles.text}>{count} تولد در پیش رو</p>
