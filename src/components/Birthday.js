@@ -9,7 +9,7 @@ export default function Birthday() {
     } = useEasybase()
 
     useEffect( () => {
-        configureFrame({tableName: "BIRTHDAY" ,limit:10});
+        configureFrame({tableName: "BIRTHDAY" ,limit:100});
         sync()
     })
    

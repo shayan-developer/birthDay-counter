@@ -1,4 +1,4 @@
-import { LOADING, MODAl } from "../types/types"
+import { COUNT, LOADING, MODAl } from "../types/types"
 
 export const isloading = () => {
     return {
@@ -13,3 +13,11 @@ export const checkmodal = (boolean) => {
         
     }
 }
+export const checkCount = (num) => {
+    return {
+        type: COUNT,
+        check:num
+        
+    }
+}
+
